@@ -25,23 +25,39 @@ export default function welcome() {
         <Text style={styles.buttonText2}>Phone Number</Text>
         </TouchableOpacity>
         </View>
+        <View style={styles.inputMain}>
         <View style={styles.inputContainer}>
        <Message_icon width={20} />
         <TextInput style={styles.inputBox} defaultValue='Enter email address'>
         </TextInput>
         <Cancel_icon width={22}/>
         </View>
-
         <View style={styles.inputContainer}>
         <Lock_icon width={20} />
         <TextInput textContentType='password' style={styles.inputBox} defaultValue='Enter Password'>
         </TextInput>
         <Eye_icon width={20} />
         </View>
+        </View>
         <View style={styles.checkBoxContainer}>
         <CheckBox onpress={""} isChecked={true}  text={'Keep me logged in'} checkboxStyle={styles.checkBox}/>   
-         <Text>forgot password</Text>
+         <Text style={[styles.nextText]}>Forgot password</Text>
         </View> 
+
+        <View style={styles.loginButtons}>
+        <TouchableOpacity style={[styles.loginButtons1, styles.loginButtons2]}>
+        <Text style={styles.buttonText}>Login</Text>
+        </TouchableOpacity >
+        <TouchableOpacity onPress={()=>{}} style={[styles.loginButtons1]}>
+         <Image style={styles.google} source={assets.google}></Image>
+        <Text style={styles.googleText}>Login with Google</Text>
+        </TouchableOpacity>
+        </View>
+        <View style={styles.signupBox}>
+        <Text style={styles.signupText}>Dont have an account?</Text>
+        <TouchableOpacity><Text style={styles.googleText}>Sign Up</Text></TouchableOpacity>
+        </View>
+        
         </View>
       
     </View>
@@ -83,18 +99,17 @@ const styles = StyleSheet.create({
     },
 
     buttons:{
-  flex:1,
   flexDirection:'row',
   justifyContent:'center',
   alignContent:'center',
-  marginTop:30,
+  marginTop:40,
   gap:2,
     },
 
     button:{
         flex:1,
         width:185,
-        height: 30,
+        height: 35,
         alignItems:'center',
         justifyContent:'center',
         borderRadius:4,
@@ -112,6 +127,7 @@ const styles = StyleSheet.create({
 
     buttonText:{
          color:'white',
+         fontSize:13
     },
 
     buttonText2:{
@@ -122,6 +138,13 @@ const styles = StyleSheet.create({
    width:265,
    
    },
+   inputMain:{
+    marginTop:40,
+    justifyContent:'center',
+    alignItems:'center',
+    gap:25,
+    marginBottom:10,
+   },
 
    inputContainer:{
     flexDirection:'row',
@@ -131,7 +154,6 @@ const styles = StyleSheet.create({
     borderColor:'grey',
     alignItems:'center',
     gap:10,
-    marginBottom:30,
     paddingLeft:10,
     borderRadius:5
    },
@@ -148,10 +170,59 @@ const styles = StyleSheet.create({
 
    checkBoxContainer:{
  flexDirection:'row',
- margin:0,
+ marginTop:0,
 alignItems:"center",
 justifyContent:'space-between',
 width:360
-   }
- 
+   },
+
+ nextText:{
+ fontSize: 13,
+ color:'#192f6a',
+ fontWeight:"bold",
+   },
+
+   loginButtons:{
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    paddingTop:20,
+    gap:10
+   },
+
+   loginButtons1:{
+    flexDirection:'row',
+    gap:8,
+    justifyContent:'center',
+    alignItems:'center',
+     borderWidth:1 ,
+     width:260,
+     height:35,
+     borderRadius:10,
+
+   },
+   loginButtons2:{
+backgroundColor:'#192f6a',
+
+  },
+  google:{
+    width:20,
+    height:20
+  },
+  googleText:{
+ color:'#192f6a',
+ fontSize:12,
+ fontWeight:'bold'
+  },
+
+  signupBox:{
+ flexDirection:'row',
+ marginTop:16,
+ gap:5
+  },
+  signupText:{
+ fontSize:15,
+ fontWeight:'bold',
+ color:'black'
+  }
 })

@@ -20,11 +20,13 @@ export default function header() {
 }
 
 const styles = StyleSheet.create({
+
     headerStyle:{
         flex: 1, 
         width: 420,
         height:200
     },
+
     linearGradient: {
         flex: 1,
         flexDirection:'row',
@@ -34,16 +36,16 @@ const styles = StyleSheet.create({
 
 
       },
+
     headerText:{
         fontFamily:'sans', 
         fontSize:20,
-        color:"white"
+        color:"white",
       },
       
-      logo:{
-        
- width:30,
- height:30
+      logo:{  
+        width:30,
+        height:30,
       }
 
 })

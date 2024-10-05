@@ -12,7 +12,6 @@ export default function checkbox({
   return (
     <View style={[styles.container, containerStyle]}>
         <TouchableOpacity style={[styles.checkbox, 
-            isChecked && styles.checkBoxSelected, 
             checkboxStyle]}>
             <Animated.View />  
         </TouchableOpacity>
@@ -28,15 +27,15 @@ const styles = StyleSheet.create({
         gap:10,
     },
     text:{
-
+        fontSize:13,
     },
 
     checkbox:{
         borderColor:'grey',
         borderRadius:5,
         borderWidth: 1,
-        height:25,
-        width:25,
+        height:20,
+        width:20,
         
     },
     checkBoxSelected:{
