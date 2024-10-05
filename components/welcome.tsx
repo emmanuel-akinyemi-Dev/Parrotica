@@ -1,6 +1,13 @@
-import { StyleSheet, Text, Touchable, TouchableOpacity, View } from 'react-native'
+import { Image, StyleSheet, Text, TextInput, Touchable, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import Header from './header'
+import{assets}  from '../assets/assets'
+import Lock_icon from '../assets/lock-svgrepo-com.svg'
+import Message_icon from '../assets/email-svgrepo-com.svg'
+import Cancel_icon from '../assets/icons8-cancel.svg'
+import Eye_icon from '../assets/eye-off-outline-svgrepo-com.svg'
+import CheckBox from "../components/checkbox"
+import checkbox from '../components/checkbox'
 
 export default function welcome() {
   return (
@@ -9,17 +16,32 @@ export default function welcome() {
         <Header />
         <View style={styles.container2}>
         <Text style={styles.headerText}>Hi, Welcome Back</Text>
-        <Text style={styles.subText}>please login into your account</Text>
+        <Text style={styles.subText}>Please login into your account</Text>
         <View style={styles.buttons}>
         <TouchableOpacity style={[styles.button,styles.button1]}>
         <Text style={styles.buttonText}>Email Address</Text>
         </TouchableOpacity >
         <TouchableOpacity style={[styles.button, styles.button2]}>
-        <Text style={styles.subText}>Phone Number</Text>
+        <Text style={styles.buttonText2}>Phone Number</Text>
         </TouchableOpacity>
-
+        </View>
+        <View style={styles.inputContainer}>
+       <Message_icon width={20} />
+        <TextInput style={styles.inputBox} defaultValue='Enter email address'>
+        </TextInput>
+        <Cancel_icon width={22}/>
         </View>
 
+        <View style={styles.inputContainer}>
+        <Lock_icon width={20} />
+        <TextInput textContentType='password' style={styles.inputBox} defaultValue='Enter Password'>
+        </TextInput>
+        <Eye_icon width={20} />
+        </View>
+        <View style={styles.checkBoxContainer}>
+        <CheckBox onpress={""} isChecked={true}  text={'Keep me logged in'} checkboxStyle={styles.checkBox}/>   
+         <Text>forgot password</Text>
+        </View> 
         </View>
       
     </View>
@@ -44,7 +66,7 @@ const styles = StyleSheet.create({
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
         alignItems:"center",
-        padding:25
+        padding:25,
 
     },
 
@@ -56,8 +78,8 @@ const styles = StyleSheet.create({
     },
 
     subText:{
-fontSize:12,
-marginTop:5
+    fontSize:12,
+    marginTop:5
     },
 
     buttons:{
@@ -65,7 +87,8 @@ marginTop:5
   flexDirection:'row',
   justifyContent:'center',
   alignContent:'center',
-  marginTop:30
+  marginTop:30,
+  gap:2,
     },
 
     button:{
@@ -74,20 +97,61 @@ marginTop:5
         height: 30,
         alignItems:'center',
         justifyContent:'center',
-        borderRadius:4
+        borderRadius:4,
        
       
     },
 
     button1:{
-          backgroundColor:'#192f6a'
+          backgroundColor:'#192f6a',
     },
 
     button2:{
-        backgroundColor:'#f3f5f5'
+        backgroundColor:'#f3f5f7',
     },
 
     buttonText:{
-         color:'white'
-    }
+         color:'white',
+    },
+
+    buttonText2:{
+        color:'grey',
+   },
+
+   inputBox:{
+   width:265,
+   
+   },
+
+   inputContainer:{
+    flexDirection:'row',
+    width:365,
+    height:50,
+    borderWidth:1,
+    borderColor:'grey',
+    alignItems:'center',
+    gap:10,
+    marginBottom:30,
+    paddingLeft:10,
+    borderRadius:5
+   },
+
+   inputImage:{
+    width:25,
+    height:25,
+    color:'#192f6a',
+   },
+
+   checkBox:{
+
+   },
+
+   checkBoxContainer:{
+ flexDirection:'row',
+ margin:0,
+alignItems:"center",
+justifyContent:'space-between',
+width:360
+   }
+ 
 })
