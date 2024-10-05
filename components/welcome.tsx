@@ -7,7 +7,6 @@ import Message_icon from '../assets/email-svgrepo-com.svg'
 import Cancel_icon from '../assets/icons8-cancel.svg'
 import Eye_icon from '../assets/eye-off-outline-svgrepo-com.svg'
 import CheckBox from "../components/checkbox"
-import checkbox from '../components/checkbox'
 
 export default function welcome() {
   return (
@@ -68,7 +67,8 @@ const styles = StyleSheet.create({
 
     container:{
         flex:1,
-        alignItems:"center"
+        alignItems:"center",
+        height:'auto',
         
     },
 
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         position:'absolute',
         width:415,
         backgroundColor:"white",
-        height:400,
+        height:'auto',
         marginTop:160,
         borderTopLeftRadius:30,
         borderTopRightRadius:30,
